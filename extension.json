@@ -1,13 +1,13 @@
 {
-  "identifier": "me.arthr.Liquid",
-  "name": "Liquid",
-  "organization": "arthr",
-  "description": "Syntax highlighting for Liquid template files.",
-  "version": "1.1.2",
+  "identifier": "com.pixelfrei.Stencil",
+  "name": "Stencil",
+  "organization": "pixelfrei",
+  "description": "Syntax highlighting for Stencil template files.",
+  "version": "0.1",
   "license": "MIT",
-  "bugs": "https://github.com/arthrfrts/Liquid.novaextension/issues",
-  "repository": "https://github.com/arthrfrts/Liquid.novaextension",
-  "keywords": ["liquid", "jekyll", "shopify", "html", "templates", "syntax"],
+  "bugs": "https://github.com/pixelfrei/Stencil.novaextension/issues",
+  "repository": "https://github.com/pixelfrei/Stencil.novaextension",
+  "keywords": ["stencil", "kitura", "swift", "fuller", "html", "templates", "syntax"],
   "categories": ["languages", "completions"],
-  "activationEvents": ["onLanguage:liquid", "onLanguage:html"]
+  "activationEvents": ["onLanguage:stencil", "onLanguage:html"]
 }

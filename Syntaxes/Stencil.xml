@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<syntax name="liquid" subsyntax="true">
+<syntax name="stencil" subsyntax="true">
 	<meta>
-		<name>Liquid</name>
+		<name>Stencil</name>
 		<type>markup</type>
 	</meta>
 
@@ -52,7 +52,7 @@
 	<collections>
 		<!-- Built-in Keywords -->
 		<collection name="keywords">
-			<scope name="liquid.keyword" spell-check="false">
+			<scope name="stencil.keyword" spell-check="false">
 				<strings prefix="(?&lt;!block|set)\s" suffix="\b" word-boundary="false">
 					<string>if</string>
 					<string>endif</string>
@@ -181,50 +181,50 @@
 		
 		<!-- Values -->
 		<collection name="values">
-			<scope name="liquid.string.double-quoted">
+			<scope name="stencil.string.double-quoted">
 				<starts-with>
 					<expression>&quot;</expression>
-					<capture number="0" name="liquid.string.double-quoted.delimiter" />
+					<capture number="0" name="stencil.string.double-quoted.delimiter" />
 				</starts-with>
 				<ends-with>
 					<expression>&quot;|(?:(?&lt;!\\)$)</expression>
-					<capture number="0" name="liquid.string.double-quoted.delimiter" />
+					<capture number="0" name="stencil.string.double-quoted.delimiter" />
 				</ends-with>
 				<subscopes>
-					<scope name="liquid.string.double-quoted.escape">
+					<scope name="stencil.string.double-quoted.escape">
 						<expression>\\(?:\\|&quot;|n|r|t|b|f)</expression>
 					</scope>
 				</subscopes>
 			</scope>
-			<scope name="liquid.string.single-quoted">
+			<scope name="stencil.string.single-quoted">
 				<starts-with>
 					<expression>&apos;</expression>
-					<capture number="0" name="liquid.string.single-quoted.delimiter" />
+					<capture number="0" name="stencil.string.single-quoted.delimiter" />
 				</starts-with>
 				<ends-with>
 					<expression>&apos;|(?:(?&lt;!\\)$)</expression>
-					<capture number="0" name="liquid.string.single-quoted.delimiter" />
+					<capture number="0" name="stencil.string.single-quoted.delimiter" />
 				</ends-with>
 				<subscopes>
-					<scope name="liquid.string.single-quoted.escape">
+					<scope name="stencil.string.single-quoted.escape">
 						<expression>\\(?:\\|&apos;|n|r|t|b|f)</expression>
 					</scope>
 				</subscopes>
 			</scope>
-			<scope name="liquid.value.null">
+			<scope name="stencil.value.null">
 				<strings>
 					<string>nil</string>
 					<string>null</string>
 					<string>blank</string>
 				</strings>
 			</scope>
-			<scope name="liquid.value.boolean">
+			<scope name="stencil.value.boolean">
 				<strings>
 					<string>true</string>
 					<string>false</string>
 				</strings>
 			</scope>
-			<scope name="liquid.value.number">
+			<scope name="stencil.value.number">
 				<expression>\b\-?(?:\d+(?:\.\d*)?|(?:\.\d+))\b</expression>
 			</scope>
 		</collection>
@@ -232,31 +232,31 @@
 		<!-- Identifiers -->
 		<collection name="identifiers">
 			<!-- Properties in {} -->
-			<scope name="liquid.identifier">
+			<scope name="stencil.identifier">
 				<expression>\b([a-zA-Z_][A-Za-zÀ-ÖØ-öø-ÿ0-9_]*)(\s*\:\s*)</expression>
-				<capture number="1" name="liquid.identifier.property" />
+				<capture number="1" name="stencil.identifier.property" />
 			</scope>
 			<!-- Object.properties -->
-			<scope name="liquid.identifier">
+			<scope name="stencil.identifier">
 				<expression>(\s*\.\s*)([a-zA-Z_][A-Za-zÀ-ÖØ-öø-ÿ0-9_]*)(?!\()\b</expression>
-				<capture number="2" name="liquid.identifier.property" />
+				<capture number="2" name="stencil.identifier.property" />
 			</scope>
 			<!-- Methods -->
-			<scope name="liquid.identifier">
+			<scope name="stencil.identifier">
 				<expression>(\s*\.\s*)([a-zA-Z_][A-Za-zÀ-ÖØ-öø-ÿ0-9_]*)(?=\()\b</expression>
-				<capture number="2" name="liquid.identifier.method" />
+				<capture number="2" name="stencil.identifier.method" />
 			</scope>
 			<!-- Filters -->
-			<scope name="liquid.identifier">
+			<scope name="stencil.identifier">
 				<expression>(\s*\|\s*)([a-zA-Z_][A-Za-zÀ-ÖØ-öø-ÿ0-9_]*)\b</expression>
-				<capture number="2" name="liquid.identifier.method" />
+				<capture number="2" name="stencil.identifier.method" />
 			</scope>
 			<!-- Functions -->
-			<scope name="liquid.identifier.function">
+			<scope name="stencil.identifier.function">
 				<expression>\b(?&lt;!\.)([a-zA-Z_][A-Za-zÀ-ÖØ-öø-ÿ0-9_]*)(?=\()\b</expression>
 			</scope>
 			<!-- Tests -->
-			<scope name="liquid.identifier.function" spell-check="false">
+			<scope name="stencil.identifier.function" spell-check="false">
 				<strings prefix="\b" suffix="\b" word-boundary="false">
 					<string>where</string>
 					<string>where_exp</string>
@@ -267,39 +267,39 @@
 				</strings>
 			</scope>
 			<!-- Regular Identifiers -->
-			<scope name="liquid.identifier">
+			<scope name="stencil.identifier">
 				<expression>\b[a-zA-Z_][A-Za-zÀ-ÖØ-öø-ÿ0-9_]*\b</expression>
 			</scope>
 		</collection>
 		
 		<!-- Syntax -->
 		<collection name="syntax">
-			<scope name="liquid.bracket">
+			<scope name="stencil.bracket">
 				<expression>[\(\[\{\)\]\}]</expression>
 			</scope>
-			<scope name="liquid.operator">
+			<scope name="stencil.operator">
 				<expression>(\+|\-|\*|\/|\%|\/\/|\*\*|\=|\~|\&amp;|\^|\=\=|\!\=|&lt;|&gt;|&gt;\=|&lt;\=|\.\.|\?|\?\:|\?\?|\:)</expression>
 			</scope>
-			<scope name="liquid.comma">
+			<scope name="stencil.comma">
 				<expression>,</expression>
 			</scope>
 		</collection>
 		
 		<!-- Definitions -->
 		<collection name="definitions">
-			<scope name="liquid.definition.variable">
+			<scope name="stencil.definition.variable">
 				<symbol type="variable" scope="global" />
 				<expression>(?&lt;=set)\s+([a-zA-Z_][A-Za-zÀ-ÖØ-öø-ÿ0-9_]*)\s*(\=)</expression>
-				<capture number="1" name="liquid.identifier.name" />
-				<capture number="2" name="liquid.operator" />
+				<capture number="1" name="stencil.identifier.name" />
+				<capture number="2" name="stencil.operator" />
 			</scope>
-			<scope name="liquid.definition.function">
+			<scope name="stencil.definition.function">
 				<symbol type="function" scope="global">
 					<context behavior="subtree" foldable="false" />
 				</symbol>
 				<starts-with>
 					<expression>(?&lt;=macro)\s+([a-zA-Z_][A-Za-zÀ-ÖØ-öø-ÿ0-9_]*)</expression>
-					<capture number="1" name="liquid.identifier.function.name" />
+					<capture number="1" name="stencil.identifier.function.name" />
 				</starts-with>
 				<ends-with>
 					<expression>(?&lt;=\%\})</expression>
@@ -312,17 +312,17 @@
 		
 		<!-- Arguments (used in definitions) -->
 	  <collection name="arguments">
-			<scope name="liquid.arguments">
+			<scope name="stencil.arguments">
 				 <starts-with>
 					  <expression>\(</expression>
-					  <capture number="0" name="liquid.bracket" />
+					  <capture number="0" name="stencil.bracket" />
 				 </starts-with>
 				 <ends-with>
 					  <expression>\)</expression>
-					  <capture number="0" name="liquid.bracket" />
+					  <capture number="0" name="stencil.bracket" />
 				 </ends-with>
 				 <subscopes>
-					  <scope name="liquid.identifier.argument.name">
+					  <scope name="stencil.identifier.argument.name">
 							<symbol type="argument" />
 							<expression>(?&lt;!\=)\b[a-zA-Z_][A-Za-zÀ-ÖØ-öø-ÿ0-9_]*\b</expression>
 					  </scope>

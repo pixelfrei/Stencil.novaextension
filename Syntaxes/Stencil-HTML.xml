@@ -1,14 +1,14 @@
 <!-- <?xml version="1.0" encoding="UTF-8"?> -->
-<syntax name="liquid-html">
+<syntax name="stencil-html">
 	<meta>
-		<name>HTML (Liquid)</name>
+		<name>HTML (Stencil)</name>
 		<type>markup</type>
-		<preferred-file-extension>liquid</preferred-file-extension>
+		<preferred-file-extension>stencil</preferred-file-extension>
 		<parent>html</parent>
 	</meta>
 
 	<detectors>
-		<extension priority="1.0">liquid</extension>
+		<extension priority="1.0">stencil</extension>
 		<extension priority="0.2">html</extension>
 		<match-content lines="100" priority="0.9">\{\%</match-content>
 		<match-content lines="100" priority="0.7">\{\{</match-content>
@@ -57,7 +57,7 @@
 	</surrounding-pairs>
 
 	<scopes spell-check="true" lookup="dictionary">
-		<scope name="liquid-html.comment.block" spell-check="true">
+		<scope name="stencil-html.comment.block" spell-check="true">
 			<starts-with>
 				<expression>\{\%-?\s*comment\s*-?\%\}</expression>
 			</starts-with>
@@ -74,52 +74,52 @@
 	</scopes>
 
 	<template-scopes>
-		<scope name="liquid-html.comment.block" spell-check="false">
+		<scope name="stencil-html.comment.block" spell-check="false">
 			<symbol type="tag-framework">
 				<context behavior="subtree" group-by-name="true" />
 			</symbol>
 			<starts-with>
 				<expression>\{\%-?\s*comment\s*-?\%\}</expression>
-				<capture number="0" name="liquid.comment.block.start" />
+				<capture number="0" name="stencil.comment.block.start" />
 			</starts-with>
 			<ends-with>
 				<expression>\{\%-?\s*endcomment\s*-?\%\}</expression>
-				<capture number="0" name="liquid.comment.block.end" />
+				<capture number="0" name="stencil.comment.block.end" />
 			</ends-with>
 		</scope>
 
-		<scope name="liquid-html.tag.framework" spell-check="false" lookup="index">
+		<scope name="stencil-html.tag.framework" spell-check="false" lookup="index">
 			<symbol type="tag-framework">
 				<context behavior="subtree" group-by-name="true" />
 			</symbol>
 			<starts-with>
 				<expression>\{\{</expression>
-				<capture number="0" name="liquid-html.tag.framework.variable.start" />
+				<capture number="0" name="stencil-html.tag.framework.variable.start" />
 			</starts-with>
 			<ends-with>
 				<expression>\}\}</expression>
-				<capture number="0" name="liquid-html.tag.framework.variable.end" />
+				<capture number="0" name="stencil-html.tag.framework.variable.end" />
 			</ends-with>
-			<subsyntax name="liquid" noncontiguous="true" export-symbols="true">
+			<subsyntax name="stencil" noncontiguous="true" export-symbols="true">
 				<cut-off>
 					<expression>(?=\}\})</expression>
 				</cut-off>
 			</subsyntax>
 		</scope>
 
-		<scope name="liquid-html.tag.framework" spell-check="false" lookup="index">
+		<scope name="stencil-html.tag.framework" spell-check="false" lookup="index">
 			<symbol type="tag-framework">
 				<context behavior="subtree" group-by-name="true" />
 			</symbol>
 			<starts-with>
 				<expression>\{\%</expression>
-				<capture number="0" name="liquid-html.tag.framework.expression.start" />
+				<capture number="0" name="stencil-html.tag.framework.expression.start" />
 			</starts-with>
 			<ends-with>
 				<expression>\%\}</expression>
-				<capture number="0" name="liquid-html.tag.framework.expression.end" />
+				<capture number="0" name="stencil-html.tag.framework.expression.end" />
 			</ends-with>
-			<subsyntax name="liquid" noncontiguous="true" export-symbols="true">
+			<subsyntax name="stencil" noncontiguous="true" export-symbols="true">
 				<cut-off>
 					<expression>(?=\%\})</expression>
 				</cut-off>

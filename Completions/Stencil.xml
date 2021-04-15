@@ -2,23 +2,23 @@
 <completions>
 	<!-- Tags directly after "{% " -->
 	<provider>
-		<syntax>liquid</syntax>
+		<syntax>stencil</syntax>
 		<selector>*:not(string,comment)</selector>
 		<expression>(?&lt;=\{%\s)([a-zA-Z]*)</expression>
-		<set>liquid.tags</set>
+		<set>stencil.tags</set>
 	</provider>
 
 	<!-- Filters after "|" -->
 	<provider>
-		<syntax>liquid</syntax>
+		<syntax>stencil</syntax>
 		<selector>*:not(string,comment)</selector>
 		<expression>(?&lt;=\|\s)([a-zA-Z]*)</expression>
-		<set>liquid.filters</set>
+		<set>stencil.filters</set>
 	</provider>
 
 	<!-- Anything after regular opening brackets -->
 	<provider>
-		<syntax>liquid</syntax>
+		<syntax>stencil</syntax>
 		<selector>*:not(string, comment)</selector>
 		<expression>(?&lt;=\()([a-zA-Z]*)</expression>
 		<symbols type="variable" />
@@ -27,12 +27,12 @@
 				<arguments prefix="(" suffix=")" separator=", " />
 			</behavior>
 		</symbols>
-		<set>liquid.globals</set>
+		<set>stencil.globals</set>
 	</provider>
 
 	<!-- Anything else after space, but not directly behind "{%" -->
 	<provider>
-		<syntax>liquid</syntax>
+		<syntax>stencil</syntax>
 		<selector>*:not(string, comment)</selector>
 		<expression>(?&lt;!is\s|apply\s|\{%\s|\S)([a-zA-Z]*)(?!%\})</expression>
 		<symbols type="variable" />
@@ -41,13 +41,13 @@
 				<arguments prefix="(" suffix=")" separator=", " />
 			</behavior>
 		</symbols>
-		<set>liquid.functions</set>
-		<set>liquid.keywords</set>
-		<set>liquid.globals</set>
+		<set>stencil.functions</set>
+		<set>stencil.keywords</set>
+		<set>stencil.globals</set>
 	</provider>
 
 	<!-- Tags -->
-	<set name="liquid.tags">
+	<set name="stencil.tags">
 		<!-- Default: auto complete %} at the end -->
 		<behavior suffix="\}">
 			<append> %</append>
@@ -522,7 +522,7 @@
 	</set>
 
 	<!-- Keywords -->
-	<set name="liquid.keywords" symbol="keyword">
+	<set name="stencil.keywords" symbol="keyword">
 		<completion string="not" />
 		<completion string="as" />
 		<completion string="in" />
@@ -540,7 +540,7 @@
 	</set>
 
 	<!-- Tests -->
-	<set name="liquid.tests" symbol="keyword">
+	<set name="stencil.tests" symbol="keyword">
 		<completion string="blank" />
 		<completion string="empty" />
 		<completion string="nil" />
@@ -548,7 +548,7 @@
 	</set>
 
 	<!-- Filters -->
-	<set name="liquid.filters" symbol="function">
+	<set name="stencil.filters" symbol="function">
 		<completion string="abs" />
 		<completion string="append">
 			<behavior>
