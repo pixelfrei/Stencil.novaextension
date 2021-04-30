@@ -12,6 +12,7 @@
 		<extension priority="0.2">html</extension>
 		<match-content lines="100" priority="0.9">\{\%</match-content>
 		<match-content lines="100" priority="0.7">\{\{</match-content>
+		<match-content lines="100" priority="0.6">\{\#</match-content>
 	</detectors>
 
 	<indentation>
@@ -59,10 +60,10 @@
 	<scopes spell-check="true" lookup="dictionary">
 		<scope name="stencil-html.comment.block" spell-check="true">
 			<starts-with>
-				<expression>\{\%-?\s*comment\s*-?\%\}</expression>
+				<expression>\{\#</expression>
 			</starts-with>
 			<ends-with>
-				<expression>\{\%-?\s*endcomment\s*-?\%\}</expression>
+				<expression>\#\}</expression>
 			</ends-with>
 		</scope>
 
@@ -79,11 +80,11 @@
 				<context behavior="subtree" group-by-name="true" />
 			</symbol>
 			<starts-with>
-				<expression>\{\%-?\s*comment\s*-?\%\}</expression>
+				<expression>\{\#</expression>
 				<capture number="0" name="stencil.comment.block.start" />
 			</starts-with>
 			<ends-with>
-				<expression>\{\%-?\s*endcomment\s*-?\%\}</expression>
+				<expression>\#\}</expression>
 				<capture number="0" name="stencil.comment.block.end" />
 			</ends-with>
 		</scope>

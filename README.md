@@ -1,4 +1,4 @@
-# Stencil for Nova 🌊
+# Stencil for Nova 🗻
 
 A [Nova](https://nova.app) extension that provides syntax highlighting and code completion for [stencil template markup](https://stencil.fuller.li).
 

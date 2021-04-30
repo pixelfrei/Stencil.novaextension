@@ -542,7 +542,6 @@
 	<!-- Tests -->
 	<set name="stencil.tests" symbol="keyword">
 		<completion string="blank" />
-		<completion string="empty" />
 		<completion string="nil" />
 		<completion string="null" />
 	</set>

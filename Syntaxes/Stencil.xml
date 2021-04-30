@@ -56,125 +56,23 @@
 				<strings prefix="(?&lt;!block|set)\s" suffix="\b" word-boundary="false">
 					<string>if</string>
 					<string>endif</string>
-					<string>unless</string>
-					<string>endunless</string>
-					<string>elsif</string>
-					<string>else</string>
-					<string>case</string>
-					<string>when</string>
-					<string>endcase</string>
 					<string>for</string>
-					<string>endfor</string>
-					<string>break</string>
-					<string>continue</string>
-					<string>limit</string>
-					<string>offset</string>
-					<string>reversed</string>
-					<string>cycle</string>
-					<string>tablerow</string>
-					<string>endtablerow</string>
-					<string>cols</string>
-					<string>raw</string>
-					<string>endraw</string>
-					<string>assign</string>
-					<string>capture</string>
-					<string>endcapture</string>
-					<string>increment</string>
-					<string>decrement</string>
-					<string>include</string>
-					<string>render</string>
-					<string>with</string>
-					<string>is</string>
 					<string>in</string>
-					<string>as</string>
-					<string>not</string>
+					<string>endfor</string>
+					<string>extends</string>
+					<string>block</string>
+					<string>endblock</string>
+					<string>empty</string>
+					<string>elif</string>
+					<string>else</string>
 					<string>and</string>
+					<string>not</string>
 					<string>or</string>
-					<string>blank</string>
-					<!-- Filters -->
-					<string>abs</string>
-					<string>append</string>
-					<string>at_least</string>
-					<string>at_most</string>
-					<string>capitalize</string>
-					<string>ceil</string>
-					<string>compact</string>
-					<string>concat</string>
-					<string>date</string>
-					<string>default</string>
-					<string>divided_by</string>
-					<string>downcase</string>
-					<string>escape</string>
-					<string>escape_once</string>
-					<string>first</string>
-					<string>floor</string>
-					<string>join</string>
-					<string>last</string>
-					<string>lstrip</string>
-					<string>map</string>
-					<string>minus</string>
-					<string>modulo</string>
-					<string>newline_to_br</string>
-					<string>plus</string>
-					<string>prepend</string>
-					<string>remove</string>
-					<string>remove_first</string>
-					<string>replace</string>
-					<string>replace_first</string>
-					<string>reverse</string>
-					<string>round</string>
-					<string>rstrip</string>
-					<string>size</string>
-					<string>slice</string>
-					<string>sort</string>
-					<string>sort_natural</string>
-					<string>split</string>
-					<string>strip</string>
-					<string>strip_html</string>
-					<string>strip_newlines</string>
-					<string>times</string>
-					<string>truncate</string>
-					<string>truncatewords</string>
-					<string>uniq</string>
-					<string>upcase</string>
-					<string>url_decode</string>
-					<string>url_encode</string>
+					<string>filter</string>
+					<string>endfilter</string>
+					<string>include</string>
+					<string>extends</string>
 					<string>where</string>
-					<!-- Jekyll -->
-					<string>highlight</string>
-					<string>endhighlight</string>
-					<string>linenos</string>
-					<string>link</string>
-					<string>post_url</string>
-					<string>group_by</string>
-					<string>where_exp</string>
-					<string>relative_url</string>
-					<string>absolute_url</string>
-					<string>date_to_xmlschema</string>
-					<string>date_to_rfc822</string>
-					<string>date_to_string</string>
-					<string>date_to_long_string</string>
-					<string>find</string>
-					<string>find_exp</string>
-					<string>xml_escape</string>
-					<string>cgi_escape</string>
-					<string>uri_escape</string>
-					<string>number_of_words</string>
-					<string>array_to_sentence_string</string>
-					<string>markdownify</string>
-					<string>smartify</string>
-					<string>sassify</string>
-					<string>scssify</string>
-					<string>slugify</string>
-					<string>jsonify</string>
-					<string>normalize_whitespace</string>
-					<string>sample</string>
-					<string>to_integer</string>
-					<string>push</string>
-					<string>pop</string>
-					<string>shift</string>
-					<string>unshift</string>
-					<string>inspect</string>
 				</strings>
 			</scope>
 		</collection>
