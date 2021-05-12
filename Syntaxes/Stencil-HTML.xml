@@ -46,6 +46,9 @@
 	<brackets>
 		<pair open="[" close="]" />
 		<pair open="(" close=")" />
+		<pair open="&lt;" close="&gt;" />
+		<pair open="{" close="}" />
+		<pair open="%" close="%" />
 	</brackets>
 
 	<surrounding-pairs>
@@ -55,6 +58,8 @@
 		<pair open="&apos;" close="&apos;" />
 		<pair open="&quot;" close="&quot;" />
 		<pair open="`" close="`" />
+		<pair open="{" close="}" />
+		<pair open="%" close="%" />
 	</surrounding-pairs>
 
 	<scopes spell-check="true" lookup="dictionary">
