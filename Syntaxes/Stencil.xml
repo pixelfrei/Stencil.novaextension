@@ -209,7 +209,7 @@
 		</collection>
 		
 		<!-- Arguments (used in definitions) -->
-	  <collection name="arguments">
+		<collection name="arguments">
 			<scope name="stencil.arguments">
 				 <starts-with>
 					  <expression>\(</expression>
