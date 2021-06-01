@@ -3,7 +3,7 @@
   "name": "Stencil",
   "organization": "pixelfrei",
   "description": "Syntax highlighting for Stencil template files.",
-  "version": "0.1",
+  "version": "0.4",
   "license": "MIT",
   "bugs": "https://github.com/pixelfrei/Stencil.novaextension/issues",
   "repository": "https://github.com/pixelfrei/Stencil.novaextension",

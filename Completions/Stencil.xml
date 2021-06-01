@@ -8,7 +8,7 @@
 		<set>stencil.tags</set>
 	</provider>
 
-	<!-- Filters after "|" -->
+	<!-- Stencil Built-in Filters after "|" -->
 	<provider>
 		<syntax>stencil</syntax>
 		<selector>*:not(string,comment)</selector>
@@ -16,62 +16,37 @@
 		<set>stencil.filters</set>
 	</provider>
 	
-	<!-- Filters after "." -->
+	<!-- Built-in for block variables after "." -->
 	<provider>
 		<syntax>stencil</syntax>
 		<selector>*:not(string,comment)</selector>
 		<expression>(?&lt;=\.)([a-zA-Z]*)</expression>
 		<set>stencil.forBlockVariables</set>
 	</provider>
-
-	<!-- Anything after regular opening brackets -->
-	<provider>
-		<syntax>stencil</syntax>
-		<selector>*:not(string, comment)</selector>
-		<expression>(?&lt;=\()([a-zA-Z]*)</expression>
-		<symbols type="variable" />
-		<symbols type="function">
-			<behavior>
-				<arguments prefix="(" suffix=")" separator=", " />
-			</behavior>
-		</symbols>
-		<set>stencil.globals</set>
-	</provider>
-
+	
 	<!-- Anything else after space, but not directly behind "{%" -->
 	<provider>
 		<syntax>stencil</syntax>
 		<selector>*:not(string, comment)</selector>
-		<expression>(?&lt;!is\s|apply\s|\{%\s|\S)([a-zA-Z]*)(?!%\})</expression>
-		<symbols type="variable" />
-		<symbols type="function">
-			<behavior>
-				<arguments prefix="(" suffix=")" separator=", " />
-			</behavior>
-		</symbols>
-		<set>stencil.functions</set>
+		<expression>([a-zA-Z]*)(?!%\})</expression>
 		<set>stencil.keywords</set>
-		<set>stencil.globals</set>
 	</provider>
 
 	<!-- Tags -->
 	<set name="stencil.tags">
 		<!-- Default: auto complete %} at the end -->
-		<behavior suffix="\}">
-			<append> %</append>
-		</behavior>
-		<behavior suffix="%\}">
-			<append> </append>
-		</behavior>
-		<behavior suffix="(\s*%\})">
-			<append></append>
-		</behavior>
-		<behavior>
-			<append> %}</append>
-		</behavior>
-		
+		<completion string="autoescape">
+			<behavior suffix="\}">
+				<append> %</append>
+			</behavior>
+			<behavior suffix="%\}">
+				<append> </append>
+			</behavior>
+			<behavior>
+				<append> %}</append>
+			</behavior>
+		</completion>
 		<completion string="forloop" />
-		
 		
 		<!-- Control flow -->
 		<completion string="if" priority="2">
@@ -123,6 +98,28 @@
 			</behavior>
 			<behavior>
 				<append> $[condition] %}</append>
+			</behavior>
+		</completion>
+		<completion string="ifnot" priority="2">
+			<behavior suffix="\}">
+				<append><![CDATA[ $[condition] %}
+					$[…]
+				{% endif %]]></append>
+			</behavior>
+			<behavior suffix="%\}">
+				<append><![CDATA[ $[condition] %}
+					$[…]
+				{% endif ]]></append>
+			</behavior>
+			<behavior suffix="(\s*%\})">
+				<append><![CDATA[ $[condition] %}
+					$[…]
+				{% endif]]></append>
+			</behavior>
+			<behavior>
+				<append><![CDATA[ $[condition] %}
+					$[…]
+				{% endif %}]]></append>
 			</behavior>
 		</completion>
 		<completion string="endif" />
@@ -269,13 +266,6 @@
 		<completion string="and" />
 		<completion string="not" />
 		<completion string="in" />
-	</set>
-
-	<!-- Tests -->
-	<set name="stencil.tests" symbol="keyword">
-		<completion string="blank" />
-		<completion string="nil" />
-		<completion string="null" />
 	</set>
 
 	<!-- Filters -->

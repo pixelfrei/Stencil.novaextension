@@ -10,8 +10,6 @@ This extension adds supports for:
 
 - Native Stencil tags and filters
 
-Code completion is still in early stages, and your help is appreciated!
-
 ## 🙏 Thanks 🙏
 
 Thanks to [arthrfrts](https://github.com/arthrfrts/Liquid.novaextension) for his wonderful liquid extension. 

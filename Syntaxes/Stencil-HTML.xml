@@ -80,7 +80,7 @@
 	</scopes>
 
 	<template-scopes>
-		<scope name="stencil-html.comment.block" spell-check="false">
+		<scope name="stencil-html.comment.block" spell-check="true">
 			<symbol type="tag-framework">
 				<context behavior="subtree" group-by-name="true" />
 			</symbol>
@@ -94,17 +94,17 @@
 			</ends-with>
 		</scope>
 
-		<scope name="stencil-html.tag.framework" spell-check="false" lookup="index">
+		<scope name="stencil-html.tag.variable" spell-check="false" lookup="index">
 			<symbol type="tag-framework">
 				<context behavior="subtree" group-by-name="true" />
 			</symbol>
 			<starts-with>
 				<expression>\{\{</expression>
-				<capture number="0" name="stencil-html.tag.framework.variable.start" />
+				<capture number="0" name="stencil-html.tag.variable.start" />
 			</starts-with>
 			<ends-with>
 				<expression>\}\}</expression>
-				<capture number="0" name="stencil-html.tag.framework.variable.end" />
+				<capture number="0" name="stencil-html.tag.variable.end" />
 			</ends-with>
 			<subsyntax name="stencil" noncontiguous="true" export-symbols="true">
 				<cut-off>
@@ -119,11 +119,11 @@
 			</symbol>
 			<starts-with>
 				<expression>\{\%</expression>
-				<capture number="0" name="stencil-html.tag.framework.expression.start" />
+				<capture number="0" name="stencil-html.tag.framework.start" />
 			</starts-with>
 			<ends-with>
 				<expression>\%\}</expression>
-				<capture number="0" name="stencil-html.tag.framework.expression.end" />
+				<capture number="0" name="stencil-html.tag.framework.end" />
 			</ends-with>
 			<subsyntax name="stencil" noncontiguous="true" export-symbols="true">
 				<cut-off>

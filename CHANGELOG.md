@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 0.4
+
+**New/Fixes/Enhancements:**
+
+- Bugfixes
+- More completion
+
 ## Version 0.3
 
 **New/Fixes/Enhancements:**
